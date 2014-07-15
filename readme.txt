@@ -9,7 +9,8 @@ To use all the Vim plugins, add these lines to your $HOME/.vimrc.
     filetype off
     filetype plugin indent off
   endif
-  set runtimepath+=$GOROOT/misc/vim " replace $GOROOT with the output of: go env GOROOT
+  " replace $GOPATH with the one of output of: go env GOPATH
+  set runtimepath+=$GOPATH/src/github.com/vim-jp/go-vim
   filetype plugin indent on
   syntax on
 
