@@ -39,7 +39,7 @@ Configuration
 A popular configuration is to gofmt Go source files when they are saved.
 To do that, add this line to the end of your $HOME/.vimrc.
 
-  autocmd FileType go autocmd BufWritePre <buffer> Fmt
+    autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 License
 -------
