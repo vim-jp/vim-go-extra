@@ -12,7 +12,7 @@ And if you has installed some go utilities, this will add runtime path to the vi
 Below is a suppored utilities.
 
 * gocode (https://github.com/nsf/gocode)
-* lint (https://github.com/google/lint)
+* lint (https://github.com/golang/lint)
 
 Installation
 ------------
