@@ -9,7 +9,7 @@ This plugins provides following feature:
 * `:Import` command to add import statement.
 
 And if you has installed some go utilities, this will add runtime path to the vim plugins which is the utilities provides.
-Below is a suppored utilities.
+Below is the list of supported utilities.
 
 * gocode (https://github.com/nsf/gocode)
 * lint (https://github.com/golang/lint)
