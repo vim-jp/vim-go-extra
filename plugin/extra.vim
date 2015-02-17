@@ -11,7 +11,7 @@ let s:extras = [
 function! s:install_extras()
   let gopath = substitute($GOPATH, (has('win32') || has('win64')) ? ';' : ':', ',', 'g')
   let gopath = join(filter(map(s:extras, "
-  \  join(globpath(gopath, 'src/' . v:val, 0, 1), ',')
+  \  substitute(globpath(gopath, 'src/' . v:val, 0), '\n', ',', 'g')
   \"), 'len(v:val)>0'), ',')
   if len(gopath) > 0
     exec 'set rtp+=' . gopath
