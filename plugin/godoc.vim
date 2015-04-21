@@ -65,6 +65,14 @@ function! s:GodocView()
   au BufHidden <buffer> call let <SID>buf_nr = -1
 endfunction
 
+function! s:GodocNotFound(content)
+  if !len(a:content)
+    return 1
+  endif
+
+  return a:content =~# '^.*: no such file or directory\n'
+endfunction
+
 function! s:GodocWord(word)
   if !executable('godoc')
     echohl WarningMsg
@@ -78,7 +86,7 @@ function! s:GodocWord(word)
   if v:shell_error || !len(content)
     if len(s:last_word)
       silent! let content = system('godoc ' . s:last_word.'/'.word)
-      if v:shell_error || !len(content)
+      if v:shell_error || s:GodocNotFound(content)
         echo 'No documentation found for "' . word . '".'
         return 0
       endif
