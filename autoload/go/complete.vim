@@ -55,14 +55,7 @@ function! go#complete#Package(ArgLead, CmdLine, CursorPos)
     return go#complete#PackageMembers(words[1], words[2])
   endif
 
-  if executable('go')
-    let goroot = substitute(system('go env GOROOT'), '\n', '', 'g')
-    if v:shell_error
-      echomsg '''go env GOROOT'' failed'
-    endif
-  else
-    let goroot = $GOROOT
-  endif
+  let goroot = go#env#root()
 
   if len(goroot) != 0 && isdirectory(goroot)
     let dirs += [goroot]
