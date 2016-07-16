@@ -12,6 +12,7 @@ function! go#env#root()
     let root = substitute(system('go env GOROOT'), '\n', '', 'g')
     if v:shell_error
       echomsg '''go env GOROOT'' failed'
+      return ''
     endif
   else
     let root = $GOROOT
